@@ -12,8 +12,10 @@
 @interface WYCountingLabel : UILabel
 
 @property (nonatomic, assign) double wy_number;
-@property (nonatomic, weak, readonly) WYLayer *animateLayer;
-
 @property (nonatomic, copy) NSString *(^wy_FormatBlock)(double wy_number);
+
+@property (nonatomic, weak, readonly) WYLayer *animateLayer;
+@property (nonatomic, strong, readonly) UIColor *originTextColor;
+
 
 @end

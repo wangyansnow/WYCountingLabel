@@ -7,15 +7,11 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-#import <UIKit/UIKit.h>
 
-typedef NSString *(^wy_FormatBlock)(double wy_number);
-
+@class WYCountingLabel;
 @interface WYLayer : CALayer
 
-@property (nonatomic, assign) CGFloat radius;
-@property (nonatomic, weak) UILabel *ownerLabel;
-@property (nonatomic, strong) UIColor *characterColor;
-@property (nonatomic, copy) wy_FormatBlock formatBlock;
+@property (nonatomic, weak) WYCountingLabel *ownerLabel;
+
 
 @end

@@ -10,8 +10,6 @@
 
 @interface WYCountingLabel ()
 
-@property (nonatomic, strong) UIColor *originTextColor;
-
 @end
 
 @implementation WYCountingLabel
@@ -42,20 +40,18 @@
     [self.layer addSublayer:self.animateLayer];
     self.animateLayer.frame = CGRectMake(0, 0, self.bounds.size.width + 5, self.bounds.size.height);
     self.animateLayer.ownerLabel = self;
-    self.animateLayer.characterColor = self.originTextColor;
     
     if (!self.backgroundColor) {
         self.backgroundColor = [UIColor clearColor];
     }
     
     self.textColor = self.backgroundColor;
-    
     [self setValue:self.backgroundColor forKey:@"textColor"];
 }
 
 - (void)setTextColor:(UIColor *)textColor {
     if (![textColor isEqual:self.backgroundColor]) {
-        self.originTextColor = textColor;
+        _originTextColor = textColor;
     }
     
     [super setTextColor:textColor];
@@ -64,14 +60,18 @@
 - (void)setWy_number:(double)wy_number {
     _wy_number = wy_number;
     
-    self.animateLayer.radius = wy_number;
-    self.text = [NSString stringWithFormat:@"%.2f元", wy_number];
+    self.text = [NSString stringWithFormat:@"%.f", wy_number];
+    if (self.wy_FormatBlock) {
+        self.text = self.wy_FormatBlock(self.wy_number);
+    }
 }
 
 - (void)setWy_FormatBlock:(NSString *(^)(double))wy_FormatBlock {
     _wy_FormatBlock = wy_FormatBlock;
     
-    self.animateLayer.formatBlock = wy_FormatBlock;
+    if (wy_FormatBlock) {
+        self.text = wy_FormatBlock(self.wy_number);
+    }
 }
 
 

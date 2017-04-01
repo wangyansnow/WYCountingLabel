@@ -37,12 +37,12 @@
 }
 
 - (IBAction)timeBtnClick:(UIButton *)sender {
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"radius"];
-    animation.duration = 30;
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"wy_number"];
+    animation.duration = 3;
     animation.toValue = @0;
     
     self.xibLabel.wy_FormatBlock = nil;
-    [self.xibLabel.animateLayer addAnimation:animation forKey:@"radius"];
+    [self.xibLabel.animateLayer addAnimation:animation forKey:@"wy_number"];
 }
 
 
