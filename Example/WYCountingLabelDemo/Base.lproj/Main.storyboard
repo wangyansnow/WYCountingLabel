@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,14 +19,47 @@
                         <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WYCountingLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNy-WU-DZy" customClass="WYCountingLabel">
+                                <rect key="frame" x="30" y="386" width="138" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAA-oH-5dK">
+                                <rect key="frame" x="30" y="437" width="62" height="30"/>
+                                <state key="normal" title="开始动画"/>
+                                <connections>
+                                    <action selector="startAnimateBtnClick:" destination="whP-gf-Uak" eventType="touchUpInside" id="sUX-n8-ANU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e43-9c-Cys">
+                                <rect key="frame" x="122" y="437" width="46" height="30"/>
+                                <state key="normal" title="倒计时"/>
+                                <connections>
+                                    <action selector="timeBtnClick:" destination="whP-gf-Uak" eventType="touchUpInside" id="hnS-JE-rCu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="aAA-oH-5dK" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" constant="14" id="MQ9-dw-kYb"/>
+                            <constraint firstItem="dNy-WU-DZy" firstAttribute="leading" secondItem="aAA-oH-5dK" secondAttribute="leading" id="P1J-Kw-7gk"/>
+                            <constraint firstItem="e43-9c-Cys" firstAttribute="centerY" secondItem="aAA-oH-5dK" secondAttribute="centerY" id="hsI-oo-Xjv"/>
+                            <constraint firstItem="e43-9c-Cys" firstAttribute="leading" secondItem="aAA-oH-5dK" secondAttribute="trailing" constant="30" id="i4c-XF-Anq"/>
+                            <constraint firstItem="aAA-oH-5dK" firstAttribute="top" secondItem="dNy-WU-DZy" secondAttribute="bottom" constant="30" id="nvB-rd-INn"/>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="aAA-oH-5dK" secondAttribute="bottom" constant="200" id="u5s-S0-7md"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="xibLabel" destination="dNy-WU-DZy" id="VA6-eA-uQU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="433"/>
+            <point key="canvasLocation" x="253.59999999999999" y="196.55172413793105"/>
         </scene>
     </scenes>
 </document>
