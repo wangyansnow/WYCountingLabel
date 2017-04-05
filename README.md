@@ -1,24 +1,14 @@
 # WYCountingLabelDemo
 
-[![CI Status](http://img.shields.io/travis/wangyansnow/WYCountingLabelDemo.svg?style=flat)](https://travis-ci.org/wangyansnow/WYCountingLabelDemo)
-[![Version](https://img.shields.io/cocoapods/v/WYCountingLabelDemo.svg?style=flat)](http://cocoapods.org/pods/WYCountingLabelDemo)
-[![License](https://img.shields.io/cocoapods/l/WYCountingLabelDemo.svg?style=flat)](http://cocoapods.org/pods/WYCountingLabelDemo)
-[![Platform](https://img.shields.io/cocoapods/p/WYCountingLabelDemo.svg?style=flat)](http://cocoapods.org/pods/WYCountingLabelDemo)
-
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
+一款使用CoreAnimation实现动画数字变动效果
 
 ## Installation
 
-WYCountingLabelDemo is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+- 1.cocopods
+	* pod 'WYCountingLabelDem'
+- 2.手动导入
+	* 将`WYCountingLabel`整个文件夹拖入项目即可
 
-```ruby
-pod "WYCountingLabelDemo"
-```
 
 ## Author
 
