@@ -24,7 +24,6 @@
     
 }
 
-
 - (IBAction)startAnimateBtnClick:(UIButton *)sender {
     static int plusNumber = 1340;
     
@@ -37,14 +36,18 @@
 }
 
 - (IBAction)timeBtnClick:(UIButton *)sender {
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"wy_number"];
+
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:WYAnimationKey];
     animation.duration = 3;
     animation.toValue = @0;
     
     self.xibLabel.wy_FormatBlock = nil;
-    [self.xibLabel.animateLayer addAnimation:animation forKey:@"wy_number"];
+    [self.xibLabel.animateLayer addAnimation:animation forKey:WYAnimationKey];
 }
 
+- (IBAction)startCountBtnClick:(UIButton *)sender {
+    [self.xibLabel countFrom:0 to:1456 duration:2.0];
+}
 
 - (NSString *)addComma:(NSString *)string {
     NSRange dotRange = [string rangeOfString:@"."];
@@ -73,7 +76,7 @@
     
     for (int i = 1; i< dotNumber; i++){
         NSUInteger index = i * 3 + headOffset;
-        [strM insertString:@"，" atIndex:index];
+        [strM insertString:@"," atIndex:index];
     }
     
     return strM.copy;

@@ -9,6 +9,7 @@
 #import "WYLayer.h"
 #import "WYCountingLabel.h"
 
+NSString *const WYAnimationKey = @"wy_number";
 typedef NSString *(^wy_FormatBlock)(double wy_number);
 
 @interface WYLayer ()
@@ -30,12 +31,13 @@ typedef NSString *(^wy_FormatBlock)(double wy_number);
 - (instancetype)init {
     if (self = [super init]) {
         self.contentsScale = [UIScreen mainScreen].scale;
+        self.masksToBounds = NO;
     }
     return self;
 }
 
 + (BOOL)needsDisplayForKey:(NSString *)key {
-    if ([key isEqualToString:@"wy_number"]) {
+    if ([key isEqualToString:WYAnimationKey]) {
         return YES;
     }
     return [super needsDisplayForKey:key];
@@ -48,12 +50,14 @@ typedef NSString *(^wy_FormatBlock)(double wy_number);
         str = self.formatBlock(self.wy_number);
     }
     
-    CGRect strBounds = [str boundingRectWithSize:CGSizeMake(self.bounds.size.width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:self.wy_attr context:nil];
+    CGFloat width = CGRectGetWidth(self.bounds);
+    CGFloat height = CGRectGetHeight(self.bounds);
+    
+    CGRect strBounds = [str boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:self.wy_attr context:nil];
+    
     CGFloat strWidth = CGRectGetWidth(strBounds);
     CGFloat strHeight = CGRectGetHeight(strBounds);
     
-    CGFloat width = CGRectGetWidth(self.bounds);
-    CGFloat height = CGRectGetHeight(self.bounds);
     
     CGRect strRect;
     if (self.alignment == NSTextAlignmentLeft || self.alignment == NSTextAlignmentNatural) {
@@ -85,13 +89,14 @@ typedef NSString *(^wy_FormatBlock)(double wy_number);
 
 - (id<CAAction>)actionForKey:(NSString *)event {
     if (self.presentationLayer) {
-        if ([event isEqualToString:@"wy_number"]) {
-            CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"wy_number"];
-            animation.fromValue = [self.presentationLayer valueForKey:@"wy_number"];
+        if ([event isEqualToString:WYAnimationKey]) {
+            CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:WYAnimationKey];
+            animation.fromValue = [self.presentationLayer valueForKey:WYAnimationKey];
             return animation;
         }
     }
-    return [super actionForKey:event];
+//    return [super actionForKey:event];
+    return nil;
 }
 
 @end

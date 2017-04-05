@@ -24,7 +24,6 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WYCountingLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNy-WU-DZy" customClass="WYCountingLabel">
                                 <rect key="frame" x="30" y="386" width="138" height="21"/>
-                                <color key="backgroundColor" red="0.63529411759999999" green="0.80784313730000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.4431372549" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -41,6 +40,14 @@
                                 <state key="normal" title="倒计时"/>
                                 <connections>
                                     <action selector="timeBtnClick:" destination="whP-gf-Uak" eventType="touchUpInside" id="hnS-JE-rCu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qME-Ea-bha">
+                                <rect key="frame" x="190" y="437" width="74" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="startCount"/>
+                                <connections>
+                                    <action selector="startCountBtnClick:" destination="whP-gf-Uak" eventType="touchUpInside" id="8o2-FD-NWC"/>
                                 </connections>
                             </button>
                         </subviews>

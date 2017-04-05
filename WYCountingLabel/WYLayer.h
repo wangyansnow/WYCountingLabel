@@ -8,6 +8,8 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+extern NSString *const WYAnimationKey;
+
 @class WYCountingLabel;
 @interface WYLayer : CALayer
 

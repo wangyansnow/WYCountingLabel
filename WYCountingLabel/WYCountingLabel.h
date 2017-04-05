@@ -18,4 +18,6 @@
 @property (nonatomic, strong, readonly) UIColor *originTextColor;
 
 
+- (void)countFrom:(double)startNumber to:(double)endNumber duration:(NSTimeInterval)duration;
+
 @end
