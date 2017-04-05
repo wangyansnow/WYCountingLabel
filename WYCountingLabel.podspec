@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'WYCountingLabelDemo'
+  s.name             = 'WYCountingLabel'
   s.version          = '0.1.0'
   s.summary          = '数字动画'
 
