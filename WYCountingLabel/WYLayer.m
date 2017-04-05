@@ -31,7 +31,7 @@ typedef NSString *(^wy_FormatBlock)(double wy_number);
 - (instancetype)init {
     if (self = [super init]) {
         self.contentsScale = [UIScreen mainScreen].scale;
-        self.masksToBounds = NO;
+        self.wy_number = 5;
     }
     return self;
 }

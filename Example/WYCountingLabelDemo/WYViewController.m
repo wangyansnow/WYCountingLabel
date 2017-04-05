@@ -11,7 +11,8 @@
 
 @interface WYViewController ()
 
-@property (weak, nonatomic) IBOutlet WYCountingLabel *xibLabel;
+@property (weak, nonatomic) IBOutlet WYCountingLabel *plusLabel;
+@property (weak, nonatomic) IBOutlet WYCountingLabel *fromLabel;
 
 @end
 
@@ -20,35 +21,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.xibLabel.wy_number = 30;
-    
+    self.plusLabel.wy_number = 0;
+    self.fromLabel.wy_number = 0;
 }
 
-- (IBAction)startAnimateBtnClick:(UIButton *)sender {
+- (IBAction)plusBtnClick:(UIButton *)sender {
     static int plusNumber = 1340;
     
-    [self.xibLabel setWy_FormatBlock:^NSString *(double wy_number) {
+    __weak typeof(self) weakSelf = self;
+    [self.plusLabel setWy_FormatBlock:^NSString *(double wy_number) {
         NSString *str = [NSString stringWithFormat:@"%.2f", wy_number];
-        return [self addComma:str];
+        return [weakSelf addComma:str];
     }];
     
-    self.xibLabel.wy_number += plusNumber;
+    self.plusLabel.wy_number += plusNumber;
 }
 
-- (IBAction)timeBtnClick:(UIButton *)sender {
-
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:WYAnimationKey];
-    animation.duration = 3;
-    animation.toValue = @0;
-    
-    self.xibLabel.wy_FormatBlock = nil;
-    [self.xibLabel.animateLayer addAnimation:animation forKey:WYAnimationKey];
+- (IBAction)fromBtnClick:(UIButton *)sender {
+    [self.fromLabel countFrom:0 to:1576 duration:2.0];
 }
 
-- (IBAction)startCountBtnClick:(UIButton *)sender {
-    [self.xibLabel countFrom:0 to:1456 duration:2.0];
-}
-
+#pragma mark - private
 - (NSString *)addComma:(NSString *)string {
     NSRange dotRange = [string rangeOfString:@"."];
     NSString *withoutDotStr;

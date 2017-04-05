@@ -89,7 +89,7 @@
     [CATransaction begin];
     [CATransaction setDisableActions:NO];
     self.wy_number = startNumber;
-    [self animationFormat:endNumber];
+    [self animationFormat:MAX(startNumber, endNumber)];
     [CATransaction commit];
     
     self.endNumber = endNumber;
@@ -103,7 +103,11 @@
 }
 
 #pragma mark - CAAnimationDelegate
-- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+- (void)animationDidStop:(CAPropertyAnimation *)anim finished:(BOOL)flag {
+    if (![anim.keyPath isEqualToString:WYAnimationKey]) {
+        return;
+    }
+    
     [CATransaction begin];
     [CATransaction setDisableActions:NO];
     self.wy_number = self.endNumber;

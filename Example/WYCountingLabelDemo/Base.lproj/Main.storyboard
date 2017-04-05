@@ -23,46 +23,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WYCountingLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNy-WU-DZy" customClass="WYCountingLabel">
-                                <rect key="frame" x="30" y="386" width="138" height="21"/>
+                                <rect key="frame" x="169" y="55" width="138" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.4431372549" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAA-oH-5dK">
-                                <rect key="frame" x="30" y="437" width="62" height="30"/>
-                                <state key="normal" title="开始动画"/>
+                                <rect key="frame" x="36" y="50" width="50" height="30"/>
+                                <state key="normal" title="加1340"/>
                                 <connections>
-                                    <action selector="startAnimateBtnClick:" destination="whP-gf-Uak" eventType="touchUpInside" id="sUX-n8-ANU"/>
+                                    <action selector="plusBtnClick:" destination="whP-gf-Uak" eventType="touchUpInside" id="J9u-eT-Tap"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e43-9c-Cys">
-                                <rect key="frame" x="122" y="437" width="46" height="30"/>
-                                <state key="normal" title="倒计时"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qME-Ea-bha">
+                                <rect key="frame" x="36" y="110" width="113" height="30"/>
+                                <state key="normal" title="2秒钟从0到1576"/>
                                 <connections>
-                                    <action selector="timeBtnClick:" destination="whP-gf-Uak" eventType="touchUpInside" id="hnS-JE-rCu"/>
+                                    <action selector="fromBtnClick:" destination="whP-gf-Uak" eventType="touchUpInside" id="G8k-S0-FdP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qME-Ea-bha">
-                                <rect key="frame" x="190" y="437" width="74" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="startCount"/>
-                                <connections>
-                                    <action selector="startCountBtnClick:" destination="whP-gf-Uak" eventType="touchUpInside" id="8o2-FD-NWC"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WYCountingLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hz-jm-kMy" customClass="WYCountingLabel">
+                                <rect key="frame" x="169" y="114.5" width="138" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.4431372549" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="aAA-oH-5dK" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" constant="14" id="MQ9-dw-kYb"/>
-                            <constraint firstItem="dNy-WU-DZy" firstAttribute="leading" secondItem="aAA-oH-5dK" secondAttribute="leading" id="P1J-Kw-7gk"/>
-                            <constraint firstItem="e43-9c-Cys" firstAttribute="centerY" secondItem="aAA-oH-5dK" secondAttribute="centerY" id="hsI-oo-Xjv"/>
-                            <constraint firstItem="e43-9c-Cys" firstAttribute="leading" secondItem="aAA-oH-5dK" secondAttribute="trailing" constant="30" id="i4c-XF-Anq"/>
-                            <constraint firstItem="aAA-oH-5dK" firstAttribute="top" secondItem="dNy-WU-DZy" secondAttribute="bottom" constant="30" id="nvB-rd-INn"/>
-                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="aAA-oH-5dK" secondAttribute="bottom" constant="200" id="u5s-S0-7md"/>
+                            <constraint firstItem="qME-Ea-bha" firstAttribute="leading" secondItem="aAA-oH-5dK" secondAttribute="leading" id="Eju-tn-Lma"/>
+                            <constraint firstItem="aAA-oH-5dK" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leadingMargin" constant="20" id="GMH-Ni-7Ji"/>
+                            <constraint firstItem="aAA-oH-5dK" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="30" id="O85-MA-XAP"/>
+                            <constraint firstItem="qME-Ea-bha" firstAttribute="top" secondItem="aAA-oH-5dK" secondAttribute="bottom" constant="30" id="Pyg-DX-EmV"/>
+                            <constraint firstItem="3hz-jm-kMy" firstAttribute="leading" secondItem="dNy-WU-DZy" secondAttribute="leading" id="RcD-j1-jOO"/>
+                            <constraint firstItem="3hz-jm-kMy" firstAttribute="centerY" secondItem="qME-Ea-bha" secondAttribute="centerY" id="ZfH-wW-nJD"/>
+                            <constraint firstItem="3hz-jm-kMy" firstAttribute="leading" secondItem="qME-Ea-bha" secondAttribute="trailing" constant="20" id="kI8-v1-gKE"/>
+                            <constraint firstItem="dNy-WU-DZy" firstAttribute="centerY" secondItem="aAA-oH-5dK" secondAttribute="centerY" id="kKo-I8-rDc"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="xibLabel" destination="dNy-WU-DZy" id="VA6-eA-uQU"/>
+                        <outlet property="fromLabel" destination="3hz-jm-kMy" id="bhn-zj-fjx"/>
+                        <outlet property="plusLabel" destination="dNy-WU-DZy" id="bBI-cQ-drG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
