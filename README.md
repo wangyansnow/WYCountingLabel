@@ -1,5 +1,5 @@
 # WYCountingLabelDemo
-<img src="https://github.com/wangyansnow/WYCountingLabel/blob/master/Example/NumberAnimation.gif" width=320 height=576>
+<img src="https://github.com/wangyansnow/WYCountingLabel/blob/master/Example/NumberAnimation.gif" width=320 height=300>
 
 
 一款使用CoreAnimation实现动画数字变动效果
