@@ -17,8 +17,8 @@ __weak typeof(self) weakSelf = self;
 WYCountingLabel plusLabel = [[WYCountingLabel alloc] initWithFrame:CGRectMake(20, 100, 100, 30)];
 [self.view addSubview:plusLabel];
 [plusLabel setWy_FormatBlock:^NSString *(double wy_number) {
-NSString *str = [NSString stringWithFormat:@"%.2f元", wy_number];
-return str;
+	NSString *str = [NSString stringWithFormat:@"%.2f元", wy_number];
+	return str;
 }];
 plusLabel.wy_number += 10;    
 ```
