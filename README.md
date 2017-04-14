@@ -5,7 +5,7 @@
 ## Installation
 
 - 1.cocopods
-	* pod 'WYCountingLabelDem'
+	* pod 'WYCountingLabel'
 - 2.手动导入
 	* 将`WYCountingLabel`整个文件夹拖入项目即可
 
