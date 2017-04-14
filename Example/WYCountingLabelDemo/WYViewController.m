@@ -21,8 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.plusLabel.wy_number = 0;
-    self.fromLabel.wy_number = 0;
+
 }
 
 - (IBAction)plusBtnClick:(UIButton *)sender {
@@ -38,7 +37,7 @@
 }
 
 - (IBAction)fromBtnClick:(UIButton *)sender {
-    [self.fromLabel countFrom:0 to:1576 duration:2.0];
+    [self.fromLabel wy_countFrom:0 to:1576 duration:2.0];
 }
 
 #pragma mark - private

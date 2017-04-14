@@ -23,8 +23,8 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		99D553814C21529DB47E67F1 /* Pods_WYCountingLabelDemo_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 370BC78E485305073A12A206 /* Pods_WYCountingLabelDemo_Tests.framework */; };
-		E358E51F1E8F5611000A3E55 /* WYCountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E358E51C1E8F5611000A3E55 /* WYCountingLabel.m */; };
-		E358E5201E8F5611000A3E55 /* WYLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E358E51E1E8F5611000A3E55 /* WYLayer.m */; };
+		E3D3268A1EA0AF1C003B71AB /* WYCountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D326871EA0AF1C003B71AB /* WYCountingLabel.m */; };
+		E3D3268B1EA0AF1C003B71AB /* WYCountingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D326891EA0AF1C003B71AB /* WYCountingLayer.m */; };
 		F1477DB4B360D9155779F9FB /* Pods_WYCountingLabelDemo_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EEC3AE5EC0F0BA6C0343792 /* Pods_WYCountingLabelDemo_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,10 +68,10 @@
 		884FE347DEF350FB403CB240 /* WYCountingLabelDemo.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WYCountingLabelDemo.podspec; path = ../WYCountingLabelDemo.podspec; sourceTree = "<group>"; };
 		89AEA46F3BA5978916997F88 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		B04158AA9EE3B1B64969D8C5 /* Pods-WYCountingLabelDemo_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYCountingLabelDemo_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WYCountingLabelDemo_Example/Pods-WYCountingLabelDemo_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		E358E51B1E8F5611000A3E55 /* WYCountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYCountingLabel.h; sourceTree = "<group>"; };
-		E358E51C1E8F5611000A3E55 /* WYCountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYCountingLabel.m; sourceTree = "<group>"; };
-		E358E51D1E8F5611000A3E55 /* WYLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYLayer.h; sourceTree = "<group>"; };
-		E358E51E1E8F5611000A3E55 /* WYLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYLayer.m; sourceTree = "<group>"; };
+		E3D326861EA0AF1C003B71AB /* WYCountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYCountingLabel.h; sourceTree = "<group>"; };
+		E3D326871EA0AF1C003B71AB /* WYCountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYCountingLabel.m; sourceTree = "<group>"; };
+		E3D326881EA0AF1C003B71AB /* WYCountingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYCountingLayer.h; sourceTree = "<group>"; };
+		E3D326891EA0AF1C003B71AB /* WYCountingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYCountingLayer.m; sourceTree = "<group>"; };
 		F1A7B71DA010C778D77FFCBF /* Pods-WYCountingLabelDemo_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYCountingLabelDemo_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-WYCountingLabelDemo_Example/Pods-WYCountingLabelDemo_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,7 +138,7 @@
 		6003F593195388D20070C39A /* Example for WYCountingLabelDemo */ = {
 			isa = PBXGroup;
 			children = (
-				E358E51A1E8F5611000A3E55 /* WYCountingLabel */,
+				E3D326851EA0AF1C003B71AB /* WYCountingLabel */,
 				6003F59C195388D20070C39A /* WYAppDelegate.h */,
 				6003F59D195388D20070C39A /* WYAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -203,13 +203,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		E358E51A1E8F5611000A3E55 /* WYCountingLabel */ = {
+		E3D326851EA0AF1C003B71AB /* WYCountingLabel */ = {
 			isa = PBXGroup;
 			children = (
-				E358E51B1E8F5611000A3E55 /* WYCountingLabel.h */,
-				E358E51C1E8F5611000A3E55 /* WYCountingLabel.m */,
-				E358E51D1E8F5611000A3E55 /* WYLayer.h */,
-				E358E51E1E8F5611000A3E55 /* WYLayer.m */,
+				E3D326861EA0AF1C003B71AB /* WYCountingLabel.h */,
+				E3D326871EA0AF1C003B71AB /* WYCountingLabel.m */,
+				E3D326881EA0AF1C003B71AB /* WYCountingLayer.h */,
+				E3D326891EA0AF1C003B71AB /* WYCountingLayer.m */,
 			);
 			name = WYCountingLabel;
 			path = ../../WYCountingLabel;
@@ -416,11 +416,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E358E5201E8F5611000A3E55 /* WYLayer.m in Sources */,
 				6003F59E195388D20070C39A /* WYAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* WYViewController.m in Sources */,
+				E3D3268B1EA0AF1C003B71AB /* WYCountingLayer.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				E358E51F1E8F5611000A3E55 /* WYCountingLabel.m in Sources */,
+				E3D3268A1EA0AF1C003B71AB /* WYCountingLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
