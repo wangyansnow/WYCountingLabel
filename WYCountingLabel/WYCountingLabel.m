@@ -9,9 +9,10 @@
 #import "WYCountingLabel.h"
 #import "WYCountingLayer.h"
 
-@interface WYCountingLabel()
+@interface WYCountingLabel() <CAAnimationDelegate>
 
 @property (nonatomic, strong) WYCountingLayer *countingLayer;
+@property (nonatomic, assign) double endNumber;
 
 @end
 
@@ -46,12 +47,15 @@
 
 - (void)wy_countFrom:(double)startNumber to:(double)endNumber duration:(NSTimeInterval)duration {
     
+    self.endNumber = endNumber;
+    
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:WYAnimationKey];
     animation.fromValue = @(startNumber);
     animation.toValue = @(endNumber);
     animation.duration = duration;
-    animation.removedOnCompletion = NO;
+    animation.delegate = self;
     animation.fillMode = kCAFillModeForwards;
+    animation.removedOnCompletion = NO;
     [self.countingLayer addAnimation:animation forKey:WYAnimationKey];
 }
 
@@ -59,6 +63,18 @@
     self.text = [NSString stringWithFormat:@"%.f", number];
     if (self.wy_FormatBlock) {
         self.text = self.wy_FormatBlock(number);
+    }
+}
+
+#pragma mark - CAAnimationDelegate
+- (void)animationDidStop:(CABasicAnimation *)anim finished:(BOOL)flag {
+    if ([anim.keyPath isEqualToString:WYAnimationKey]) {
+        [CATransaction begin];
+        [CATransaction setDisableActions:YES];
+        self.wy_number = self.endNumber;
+        [CATransaction commit];
+        
+        [self.countingLayer removeAnimationForKey:WYAnimationKey];
     }
 }
 
