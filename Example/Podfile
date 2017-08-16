@@ -1,7 +1,7 @@
 use_frameworks!
 
 target 'WYCountingLabelDemo_Example' do
-  pod 'WYCountingLabelDemo'
+  pod 'WYCountingLabel'
 
   target 'WYCountingLabelDemo_Tests' do
     inherit! :search_paths
