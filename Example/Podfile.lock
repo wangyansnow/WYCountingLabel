@@ -1,16 +1,12 @@
 PODS:
-  - WYCountingLabelDemo (0.1.0)
+  - WYCountingLabel (0.3.0)
 
 DEPENDENCIES:
-  - WYCountingLabelDemo (from `../`)
-
-EXTERNAL SOURCES:
-  WYCountingLabelDemo:
-    :path: "../"
+  - WYCountingLabel
 
 SPEC CHECKSUMS:
-  WYCountingLabelDemo: 4cff940f2bbfb7c60ba92aaf51dde6f7748668f6
+  WYCountingLabel: 0044858a63b2270145afe2ca836b6ede7d736ff3
 
-PODFILE CHECKSUM: 861062e411ff8f068f3d17cf140f62964765dce4
+PODFILE CHECKSUM: 47db5fbb4c1823a0cc297a9fddfc4a02b67bcb16
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1
