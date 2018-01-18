@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    xxx
+    NSLog(@"xxx");
 }
 
 - (IBAction)plusBtnClick:(UIButton *)sender {
